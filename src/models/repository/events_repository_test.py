@@ -19,7 +19,7 @@ def test_insert_event():
 
 @pytest.mark.skip(reason="Precisa mais nao")
 def test_get_event_by_id():
-    event_id = "to-na-areaa"
+    event_id = "to-na-areaa-aaaaaaaaaaaaaaaaa"
     events_repository = EventsRepository()
     res = events_repository.get_event_by_id(event_id)
-    print(res)
+    # print(res)
