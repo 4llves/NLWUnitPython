@@ -12,3 +12,11 @@ def create_attendees(event_id):
 
     http_res = attendees_handle.register(http_req)
     return jsonify(http_res.body), http_res.status_code
+
+@attendees_route_bp.route("/attendees/<attendee_id>/badge", methods=["GET"])
+def get_attendees_batch(attendee_id):
+    attendees_handle = AttendeesHandler()
+    http_req = HttpReq(param = { "attendee_id": attendee_id })
+
+    http_res = attendees_handle.find_attendee_badge(http_req)
+    return jsonify(http_res.body), http_res.status_code
