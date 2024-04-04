@@ -3,5 +3,8 @@
     "**/*.pyc": {"when": "$(basename).py"},
     "**/__pycache__": true,
     "**/*.pytest_cache": true
-  }
+  },
+  "symbols.folders.associations": {},
+  "symbols.files.associations": {},
+  "symbols.hidesExplorerArrows": false
 }
