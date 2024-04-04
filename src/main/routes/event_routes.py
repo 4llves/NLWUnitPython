@@ -11,3 +11,11 @@ def create_event():
 
     http_res = event_handler.register(http_req)    
     return jsonify(http_res.body), http_res.status_code
+
+@event_route_bp.route('/events/<event_id>', methods=['GET'])
+def get_event(event_id):
+    event_handler = EventHandler()
+    http_req = HttpReq(param={ "event_id": event_id })
+    http_res = event_handler.find_by_id(http_req)
+
+    return jsonify(http_res.body), http_res.status_code
