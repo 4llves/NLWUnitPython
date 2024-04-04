@@ -7,9 +7,9 @@ db_connection_handler.connect_to_db()
 def test_insert_attendee():
     event_id = "to-na-areaa"
     attendees_info = {
-        "uuid": "aobaaa-tudo-baum-3",
+        "uuid": "aobaaa-tudo-baum",
         "name": "nonameee",
-        "email": "email3@email.com",
+        "email": "email@email.com",
         "event_id": event_id,
     }
     attendees_repository = AttendeesRepository()
