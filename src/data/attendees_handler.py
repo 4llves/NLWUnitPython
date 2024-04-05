@@ -3,6 +3,8 @@ from src.models.repository.attendees_repository import AttendeesRepository
 from src.models.repository.events_repository import EventsRepository
 from src.http_types.http_req import HttpReq
 from src.http_types.http_res import HttpRes
+from src.erros.error_types.http_not_found import HttpNotFoundError
+from src.erros.error_types.http_conflict import HttpConflictError
 
 class AttendeesHandler:
     def __init__(self) -> None:
@@ -44,7 +46,7 @@ class AttendeesHandler:
     def find_attendees_from_event(self, http_req: HttpReq) -> HttpRes:
         event_id = http_req.param["event_id"]
         attendees = self.__attendees_repository.get_attendees_by_event_id(event_id)
-        if not attendees: raise Exception("Participantes nao encontrados!")
+        if not attendees: raise HttpNotFoundError("Participantes nao encontrados!")
 
         formatted_attendees = []
         for atteendee in attendees:
